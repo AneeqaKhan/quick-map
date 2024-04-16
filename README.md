@@ -11,4 +11,4 @@ This project's live version is available [here](https://tkjg5r-3000.csb.app/)
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.

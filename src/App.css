@@ -26,6 +26,8 @@
 }
 
 .list-heading {
+  flex-wrap: wrap;
+  margin: 0 20px 20px;
   font-size: 20px;
   text-align: center;
 }

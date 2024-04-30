@@ -90,7 +90,8 @@ const CustomMap = () => {
     const reader = new FileReader();
     reader.onload = (e) => {
       const importedData = JSON.parse(e.target.result);
-      setListOfLocations(importedData);
+      console.log('importedData', importedData, 'listOfLocations', listOfLocations)
+      setListOfLocations([...listOfLocations, ...importedData]);
     };
     reader.readAsText(file);
   };
@@ -148,20 +149,34 @@ const CustomMap = () => {
             })}
             {/* displays export and import options */}
             <div className="list-footer">
-              <AppButton handleClick={exportLocations}>Export Locations</AppButton>
-              <input className="app-button" type="file" accept=".json" onChange={importLocations} />
+              <AppButton handleClick={exportLocations}>
+                Export Locations
+              </AppButton>
+              <input
+                className="app-button"
+                type="file"
+                accept=".json"
+                onChange={importLocations}
+              />
             </div>
           </div>
         ) : (
           // displays text msg to select a location
           <div>
             <p className="list-heading">
-              Select a location from map to show in a list
+              Select a location from map to show in a list or import JSON file
             </p>
+            <div className="list-footer">
+                <input
+                  className="app-button"
+                  type="file"
+                  accept=".json"
+                  onChange={importLocations}
+                />
+              </div>
           </div>
         )}
       </div>
-      
     </>
   );
 };
